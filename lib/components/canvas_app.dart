@@ -3,8 +3,10 @@ import 'package:project/components/color_picker.dart';
 import 'package:project/components/draggable_text.dart';
 import 'package:project/components/text_data.dart';
 
+// ignore: use_key_in_widget_constructors
 class CanvasApp extends StatefulWidget {
   @override
+  // ignore: library_private_types_in_public_api
   _CanvasAppState createState() => _CanvasAppState();
 }
 
@@ -22,7 +24,7 @@ class _CanvasAppState extends State<CanvasApp> {
 
   void addText(String newText) {
     setState(() {
-      texts.add(TextData(newText, Offset(50.0, 50.0), fontSize, textColor));
+      texts.add(TextData(newText, const Offset(50.0, 50.0), fontSize, textColor));
     });
     Navigator.pop(context);
   }
@@ -39,7 +41,7 @@ class _CanvasAppState extends State<CanvasApp> {
         texts[selectedTextIndex].fontSize = newFontSize;
         texts[selectedTextIndex].textColor = newColor;
         texts[selectedTextIndex].fontStyle =
-            fontStyle ?? 'Normal'; // Default to 'Normal' if null
+            fontStyle ?? 'Normal';
       }
     });
   }
@@ -77,15 +79,15 @@ class _CanvasAppState extends State<CanvasApp> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Enter New Text'),
+          title: const Text('Enter New Text'),
           content: TextField(
             controller: newTextController,
-            decoration: InputDecoration(labelText: 'New Text'),
+            decoration: const InputDecoration(labelText: 'New Text'),
           ),
           actions: [
             ElevatedButton(
               onPressed: () => addText(newTextController.text),
-              child: Text('Submit'),
+              child: const Text('Submit'),
             ),
           ],
         );
@@ -102,28 +104,28 @@ class _CanvasAppState extends State<CanvasApp> {
           children: [
             ClipOval(
               child: Material(
-                color: Colors.blue, // Button color
+                color: Colors.blue,
                 child: InkWell(
-                  splashColor: Colors.red, // Splash color
+                  splashColor: Colors.red,
                   onTap: undo,
                   child:
-                      SizedBox(width: 56, height: 56, child: Icon(Icons.undo)),
+                      const SizedBox(width: 56, height: 56, child: Icon(Icons.undo)),
                 ),
               ),
             ),
             
-            SizedBox(
+            const SizedBox(
               height: 4,
             ),
 
             ClipOval(
               child: Material(
-                color: Colors.blue, // Button color
+                color: Colors.blue,
                 child: InkWell(
-                  splashColor: Colors.red, // Splash color
+                  splashColor: Colors.red,
                   onTap: redo,
                   child:
-                      SizedBox(width: 56, height: 56, child: Icon(Icons.redo)),
+                      const SizedBox(width: 56, height: 56, child: Icon(Icons.redo)),
                 ),
               ),
             ),
@@ -209,7 +211,7 @@ class _CanvasAppState extends State<CanvasApp> {
                   ),
                   ElevatedButton(
                     onPressed: deleteText,
-                    child: Text('Delete Text'),
+                    child: const Text('Delete Text'),
                   ),
                 ],
               )
@@ -218,7 +220,7 @@ class _CanvasAppState extends State<CanvasApp> {
                 children: [
                   ElevatedButton(
                     onPressed: showAddTextPopup,
-                    child: Text('Add Text'),
+                    child: const Text('Add Text'),
                   ),
                 ],
               )

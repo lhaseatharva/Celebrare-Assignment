@@ -5,8 +5,8 @@ class TextData {
   Offset position;
   double fontSize;
   Color textColor;
-  String fontStyle; // Added property
-  bool underline; // Added property
+  String fontStyle;
+  bool underline;
 
   TextData(this.text, this.position, this.fontSize, this.textColor, {this.fontStyle = 'Normal', this.underline = false});
 }
