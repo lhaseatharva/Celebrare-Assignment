@@ -68,8 +68,8 @@ class _CanvasAppState extends State<CanvasApp> {
   void redo() {
     setState(() {
       if (redotxt.isNotEmpty) {
-        texts.add(redotxt[0]);
-        redotxt.removeAt(0);
+        texts.add(redotxt[redotxt.length-1]);
+        redotxt.removeAt(redotxt.length-1);
       }
     });
   }
