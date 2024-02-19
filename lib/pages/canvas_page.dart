@@ -7,8 +7,8 @@ class CanvasPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // ignore: prefer_const_constructors
-        title: Text('Canvas App'),
+        backgroundColor: Colors.lightBlue.shade200,
+        title: const Text('Canvas App'),
       ),
       body: CanvasApp(),
     );

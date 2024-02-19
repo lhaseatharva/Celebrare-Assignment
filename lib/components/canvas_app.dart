@@ -86,8 +86,9 @@ class _CanvasAppState extends State<CanvasApp> {
           ),
           actions: [
             ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.purple.shade100),
               onPressed: () => addText(newTextController.text),
-              child: const Text('Submit'),
+              child: const Text('Submit',style: TextStyle(color: Colors.black)),
             ),
           ],
         );
@@ -210,6 +211,7 @@ class _CanvasAppState extends State<CanvasApp> {
                     },
                   ),
                   ElevatedButton(
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.lightBlue.shade100),
                     onPressed: deleteText,
                     child: const Text('Delete Text'),
                   ),
@@ -219,8 +221,9 @@ class _CanvasAppState extends State<CanvasApp> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.lightBlue.shade100),
                     onPressed: showAddTextPopup,
-                    child: const Text('Add Text'),
+                    child: const Text('Add Text',style: TextStyle(color: Colors.black)),
                   ),
                 ],
               )
